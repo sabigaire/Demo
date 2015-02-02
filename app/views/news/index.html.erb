@@ -1,0 +1,19 @@
+<table>
+  <tr>
+    <th>News</th>
+    <th>Tags</th>
+  </tr>
+  <% @news.each do |news| %>
+    <tr>
+      <td><%= link_to news.title,news_path(news.id) %></td>
+      <td>
+        <%news.tags.each do |tag|%>
+            <%=link_to tag.name,tag_path(tag)%>
+        <%end%>
+      </td>
+    </tr>
+
+      <%end%>
+   </table>
+
+<h2><%= link_to "TAGS",tags_path %></h2>

@@ -1,0 +1,15 @@
+<h1><%= @news.title %></h1>
+<h2><%= @news.content %></h2>
+
+<ul>
+
+  <% if(@news.comments.count==0)%>
+      <h3> NO COMMENT</h3>
+     <% else %>
+      <h3>Comments</h3>
+         <% @news.comments.each do |comment| %>
+             <li><%= comment.text %> </li>
+         <% end %>
+     <%end%>
+
+</ul>

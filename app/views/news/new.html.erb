@@ -1,0 +1,12 @@
+<h1>create News</h1>
+<%= form_tag("/news", method: :post)  do%>
+
+
+
+      <%= text_field_tag(:title, autofocus: true ,placeholder: :"Title")%><br><br><br>
+      <%= text_area_tag(:content,placeholder: :"Content")%><br><br>
+      <%= select_tag(:tags,  options_from_collection_for_select(@tags, "id", "name")) %><br><br>
+      <%= submit_tag%>
+
+<%end %>
+
